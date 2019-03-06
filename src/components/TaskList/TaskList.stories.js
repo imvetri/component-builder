@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { PureTaskList } from './TaskList';
 import { task, actions } from '../Task/Task.stories';
+import { withKnobs, object } from '@storybook/addon-knobs/react';
 
 export const defaultTasks = [
   { ...task, id: '1', title: 'Task 1' },
@@ -18,9 +19,12 @@ export const withPinnedTasks = [
   { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
 ];
 
+export const noTasks = [];
+
 storiesOf('TaskList', module)
   .addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
-  .add('default', () => <PureTaskList tasks={defaultTasks} {...actions} />)
-  .add('withPinnedTasks', () => <PureTaskList tasks={withPinnedTasks} {...actions} />)
-  .add('loading', () => <PureTaskList loading tasks={[]} {...actions} />)
-  .add('empty', () => <PureTaskList tasks={[]} {...actions} />);
+  .addDecorator(withKnobs)
+  .add('default', () => { return <PureTaskList tasks={object("tasklist", defaultTasks)} {...actions} /> })
+  .add('withPinnedTasks', () => { return <PureTaskList tasks={object("tasklist", withPinnedTasks)} {...actions} /> })
+  .add('loading', () => { return <PureTaskList loading tasks={object("tasklist", noTasks)} {...actions} /> })
+  .add('empty', () => { return <PureTaskList tasks={object("tasklist", noTasks)} {...actions} /> });
