@@ -1,7 +1,8 @@
-import { configure, addParameters } from '@storybook/react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
 import requireContext from 'require-context.macro';
 import 'storybook-chromatic/storybook-addon';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withInfo } from '@storybook/addon-info';
 import '../src/index.css';
 
 const req = requireContext('../src/components', true, /.stories.js$/);
@@ -22,6 +23,12 @@ const newViewports = {
     },
   },
 };
+
+addDecorator(
+  withInfo({
+    header: false, // Global configuration for the info addon across all of your stories.
+  })
+);
 
 addParameters({
   options: {

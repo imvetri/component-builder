@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/** Task component */
 function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   return (
     <div className={`list-item ${state}`}>
@@ -29,12 +30,15 @@ function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
 }
 
 Task.propTypes = {
+  /** task structure*/
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
   }),
+  /** onArchive handler*/
   onArchiveTask: PropTypes.func,
+  /** onPin handler*/
   onPinTask: PropTypes.func,
 };
 

@@ -58,9 +58,13 @@ export function PureTaskList({ loading, tasks, onPinTask, onArchiveTask }) {
 }
 
 PureTaskList.propTypes = {
+    /** Flag for loading*/
     loading: PropTypes.bool,
+    /** List of tasks */
     tasks: PropTypes.arrayOf(Task.propTypes.task).isRequired,
+    /** Function call for onPin */
     onPinTask: PropTypes.func.isRequired,
+    /** Function call for onArchive */
     onArchiveTask: PropTypes.func.isRequired,
 };
 
