@@ -2,8 +2,7 @@ var path = require('path'),
 fs = require('fs'),
 ensureDirectoryExistence = require("./ensureDirectoryExistence");
 
-
-const createComponent = (elements, componentName) => {
+const createComponentStories = (elements, componentName, props) => {
 
     elements = elements.length==0 ? ["inputElement", "labelElement"] : elements;
     componentName = componentName ? componentName : "RegistrationComponent";
