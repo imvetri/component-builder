@@ -1,9 +1,6 @@
-# Component creator usage!
+# Component stories usage!
 
-> node server.js
-
-Hit the endpoint
-> http://localhost:3001/createComponent?name=input,props=OBJECT TBD
+> createComponentStories(elements, props, componentName);
 
 It Should create a component as follows
 
