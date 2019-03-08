@@ -1,6 +1,6 @@
 var path = require('path'),
 fs = require('fs'),
-ensureDirectoryExistence = require("./ensureDirectoryExistence");
+ensureDirectoryExistence = require("../ensureDirectoryExistence");
 
 const createComponentStories = (elements, componentName, props) => {
 
