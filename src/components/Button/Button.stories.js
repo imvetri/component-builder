@@ -17,6 +17,7 @@ export const actions = {
 };
 
 storiesOf('Button', module)
+    .addDecorator(story => <div style={{ padding: '1rem' }}>{story()}</div>)
     .addDecorator(withKnobs)
     .addDecorator(withThemes([
         { name: "pink", class: "theme-pink", color: "#f39", default: true },

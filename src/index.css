@@ -997,6 +997,19 @@
     border: 1px solid #f39;
     background-color: #f39;
     color: #fff;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 21px;
+    font-size: 19px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0;
+    margin: 0;
  }
  
 
@@ -1004,11 +1017,39 @@
     border: 1px solid #ef5f96;
     background-color: #ef5f96;
     color: #fff;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 21px;
+    font-size: 19px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 0;
+    margin: 0;
  }
 
  .theme-bbw input{
-  border: 1px solid #333;
-  background-color: #333;
-  color: #fff;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 21px;
+    font-size: 19px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 0;
+    margin: 0;
 }
  
