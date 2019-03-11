@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.18.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
@@ -16,7 +17,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "CHROMATIC_APP_CODE=y1un6v2hjb9 chromatic test && build-storybook -c .storybook",
-    "chromatic": "CHROMATIC_APP_CODE=y1un6v2hjb9 chromatic test"
+    "chromatic": "CHROMATIC_APP_CODE=y1un6v2hjb9 chromatic test",
+    "creator": "node server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

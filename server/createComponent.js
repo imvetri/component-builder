@@ -3,14 +3,14 @@ fs = require('fs'),
 ensureDirectoryExistence = require("./ensureDirectoryExistence");
 
 
-const createComponent = (elements, componentName) => {
+const createComponent = (list) => {
 
-    elements = elements.length==0 ? ["inputElement", "labelElement"] : elements;
-    componentName = componentName ? componentName : "RegistrationComponent";
+    let names = list.map(item=>item.name);
+    let markups = list.map(item=>item.markup);
+    let componentName = "RegistrationComponent";
 
-
-    let elementImportPaths = elements.map(element => "import " + element + " from 'src/elements/" + element + "';").join("\n");
-    let elementsJSX = elements.map(element => "<" + element + "/>").join("\n            ");
+    let elementImportPaths = names.map(element => `import ${element} from 'src/components/${element}/${element}.js';`).join("\n");
+    let elementsJSX = markups.join("\n");
 
     const fileTemplate = `
 import React from 'react';
@@ -34,7 +34,7 @@ class ${componentName} extends React.Component {
 export default ${componentName};
  `
 
-    let file=path.join(process.cwd(),`src/components/${componentName}/${componentName}.js`)
+    let file=path.join(process.cwd(),`src/components/${componentName}/${componentName}.js`);
     ensureDirectoryExistence(file)
     fs.writeFileSync(file, fileTemplate)
 }

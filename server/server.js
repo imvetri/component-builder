@@ -1,28 +1,25 @@
 // Libraries.
 
 const express = require('express')
+var bodyParser = require("body-parser");
 
 // Dependencies.
 
 const createComponent = require("./createComponent.js");
+const app = express();
+const port = 3001;
 
-const app = express()
-const port = 3001
- 
+app.use(bodyParser.json());
 app.get('/', (req, res) => res.send('Hello World!'))
- 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
- 
-// Whenever 3001 s hit, this program has to
-/*
-    localhost:3001/createComponent?name="input",name="text"
-*/
-app.get('/createComponent', (req, res) => {
+app.post('/createComponent', (req, res) => {
     
-    let elements = req.query.name.split(",");
-    let componentName
-    createComponent(elements, componentName);
+    let data = req.body;
+    console.log("Element", data.element);
+    console.log("Markup", data.markup);
+    console.log("full", JSON.stringify(req.body));
+    createComponent(data);
     res.send('Hello World!')
 })
  
