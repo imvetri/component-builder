@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Input({ input: { id, value, state }, onInputFocus }) {
     return (
         <div>
-            <input id={id} type="text" value={value} onClick={() => onInputFocus(id)} />
+            <input id={id} type="text" value={value} onClick={() => onInputFocus(id)} style={{border: '1px solid black', textTransform: 'uppercase', display: 'inline-block', padding: '0.5rem 2rem', textDecoration: 'none', boxSizing: 'border-box', lineHeight: '21px', letterSpacing: '0.15em', textAlign: 'center', fontWeight: 'bold', margin: '0'}}/>
         </div>
     );
 }

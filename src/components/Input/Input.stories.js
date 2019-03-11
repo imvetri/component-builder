@@ -15,5 +15,6 @@ export const actions = {
 };
 
 storiesOf('Input', module)
+    .addDecorator(story => <div style={{ padding: '1rem' }}>{story()}</div>)
     .addDecorator(withKnobs)
     .add('default', () => { return <Input input={object('input', { ...input })} {...actions} /> })

@@ -4,19 +4,15 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs/react';
 import withThemes from "storybook-addon-themes";
 
+import Product from './Product';
 
-import Button from './Button';
-
-export const button = {
+export const product = {
     id: '1',
-    name: 'Create'
+    title: 'Product Name',
+    price: '$23.00'
 };
 
-export const actions = {
-    onButtonClick: action('onButtonClick')
-};
-
-storiesOf('Button', module)
+storiesOf('Product', module)
     .addDecorator(story => <div style={{ padding: '1rem' }}>{story()}</div>)
     .addDecorator(withKnobs)
     .addDecorator(withThemes([
@@ -24,4 +20,4 @@ storiesOf('Button', module)
         { name: "vs", class: "theme-vs", color: "#ef5f96" },
         { name: "bbw", class: "theme-bbw", color: "#333" }
       ]))
-    .add('default', () => { return <Button button={object('button', { ...button })} {...actions} /> })
+    .add('default', () => { return <Product product={object('product', { ...product })}/> }, { notes: "A default product" });
