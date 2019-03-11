@@ -2,14 +2,16 @@ var path = require('path'),
 fs = require('fs'),
 ensureDirectoryExistence = require("./ensureDirectoryExistence");
 
+var createComponentStories = require("./createComponentStories/createComponentStories")
+
 
 const createComponent = (list) => {
 
-    let names = list.map(item=>item.name);
+    let names = [...new Set(list.map(item=>item.name))];
     let markups = list.map(item=>item.markup);
     let componentName = "RegistrationComponent";
 
-    let elementImportPaths = names.map(element => `import ${element} from 'src/components/${element}/${element}.js';`).join("\n");
+    let elementImportPaths = names.map(element => `import ${element} from '../${element}/${element}.js';`).join("\n");
     let elementsJSX = markups.join("\n");
 
     const fileTemplate = `
@@ -35,8 +37,11 @@ export default ${componentName};
  `
 
     let file=path.join(process.cwd(),`src/components/${componentName}/${componentName}.js`);
-    ensureDirectoryExistence(file)
-    fs.writeFileSync(file, fileTemplate)
+    ensureDirectoryExistence(file);
+    fs.writeFileSync(file, fileTemplate);
+    console.log("component file created");
+    createComponentStories(componentName);
+    console.log("component.stories.js file created")
 }
 
 
