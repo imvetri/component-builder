@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Button({ button: { id, name, state }, onButtonClick }) {
     return (
         <div>
-            <input id={id} type="button" value={name} onClick={() => onButtonClick(id)} />
+            <input id={id} type="button" value={name} style={{backgroundColor: 'grey', border: '1px solid black', textTransform: 'uppercase', display: 'inline-block', padding: '0.5rem 2rem', textDecoration: 'none', boxSizing: 'border-box', lineHeight: '21px', letterSpacing: '0.15em', textAlign: 'center', fontWeight: 'bold', margin: '0'}} onClick={() => onButtonClick(id)} />
         </div>
     );
 }
