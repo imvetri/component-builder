@@ -11,6 +11,7 @@ const createComponentStories = (componentName) => {
     import ${componentName} from "./${componentName}";
     
     storiesOf('${componentName}', module)
+    .addDecorator(story => <div style={{ padding: '1rem', border: '1px solid black' , backgroundColor:'whitesmoke' }}>{story()}</div>)
         .add('default', () =>  <${componentName} /> )
  `
 
