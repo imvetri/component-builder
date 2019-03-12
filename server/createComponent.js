@@ -12,7 +12,7 @@ const createComponent = (list) => {
     let componentName = "RegistrationComponent";
 
     let elementImportPaths = names.map(element => `import ${element} from '../${element}/${element}.js';`).join("\n");
-    let elementsJSX = markups.join("\n");
+    let elementsJSX = markups.join("<br/>\n");
 
     const fileTemplate = `
 import React from 'react';
